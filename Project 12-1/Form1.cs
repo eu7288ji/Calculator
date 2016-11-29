@@ -124,7 +124,7 @@ namespace Project_12_1
             {
                 double chk = Convert.ToDouble("1") / Convert.ToDouble(txtResult.Text); //initialize equation to find reciprocal
                 txtResult.Text = chk.ToString(); //plugging equation into textbox
-            }
+            }//minornote
         }
     }
 }
