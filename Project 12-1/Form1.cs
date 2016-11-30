@@ -25,14 +25,12 @@ namespace Project_12_1
         {
             if ((txtResult.Text == "0") || (isOperationPerformed))
                 txtResult.Clear();
-
             isOperationPerformed = false;
             Button button = (Button)sender;
             if(button.Text == ".")
             {
                 if (!txtResult.Text.Contains("."))
                     txtResult.Text = txtResult.Text + button.Text;
-
             }
                 else
             txtResult.Text = txtResult.Text + button.Text;
@@ -52,7 +50,6 @@ namespace Project_12_1
             }
             else
             {
-
                 operationPerformed = button.Text;
                 resultValue = Double.Parse(txtResult.Text);
                 lblCurrentOperation.Text = resultValue + " " + operationPerformed;
@@ -87,7 +84,6 @@ namespace Project_12_1
             }
             resultValue = Double.Parse(txtResult.Text);
             lblCurrentOperation.Text = "";
-
         }
 
         private void btnBack_Click(object sender, EventArgs e) //back button
@@ -121,7 +117,8 @@ namespace Project_12_1
                 txtResult.Text = chk.ToString(); //plugging equation into textbox
             }
         }
-        private void Negate (object sender, EventArgs e)
+
+        private void Negate (object sender, EventArgs e) //negate button
         {
             if (txtResult.Text.StartsWith("-"))
             {
@@ -132,8 +129,6 @@ namespace Project_12_1
             {
                 txtResult.Text = "-" + txtResult.Text;
             }
-
         }
-
     }
 }
