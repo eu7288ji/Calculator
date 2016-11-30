@@ -21,11 +21,6 @@ namespace Project_12_1
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_click(object sender, EventArgs e)
         {
             if ((txtResult.Text == "0") || (isOperationPerformed))
@@ -124,7 +119,21 @@ namespace Project_12_1
             {
                 double chk = Convert.ToDouble("1") / Convert.ToDouble(txtResult.Text); //initialize equation to find reciprocal
                 txtResult.Text = chk.ToString(); //plugging equation into textbox
-            }//minornote
+            }
         }
+        private void Negate (object sender, EventArgs e)
+        {
+            if (txtResult.Text.StartsWith("-"))
+            {
+                txtResult.Text = txtResult.Text.ToString();
+            }
+            else if
+                (!string.IsNullOrEmpty(txtResult.Text) && decimal.Parse(txtResult.Text) != 0)
+            {
+                txtResult.Text = "-" + txtResult.Text;
+            }
+
+        }
+
     }
 }
