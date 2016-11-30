@@ -336,6 +336,7 @@
             this.AcceptButton = this.btnEquals;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(206, 304);
             this.Controls.Add(this.label1);

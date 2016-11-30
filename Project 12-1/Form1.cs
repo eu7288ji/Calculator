@@ -21,7 +21,7 @@ namespace Project_12_1
             InitializeComponent();
         }
 
-        private void button_click(object sender, EventArgs e)
+        private void button_click(object sender, EventArgs e) //method for every number including "."
         {
             if ((txtResult.Text == "0") || (isOperationPerformed))
                 txtResult.Clear();
@@ -36,14 +36,14 @@ namespace Project_12_1
             txtResult.Text = txtResult.Text + button.Text;
         }
 
-        private void operator_click(object sender, EventArgs e) //
+        private void operator_click(object sender, EventArgs e) //method for each equation sign (+,-,*,/)
         {
             Button button = (Button)sender;
 
             if (resultValue != 0)
             {
-                btnEquals.PerformClick();
-                operationPerformed = button.Text;
+                btnEquals.PerformClick(); //on click...
+                operationPerformed = button.Text; 
                 resultValue = Double.Parse(txtResult.Text);
                 lblCurrentOperation.Text = resultValue + " " + operationPerformed;
                 isOperationPerformed = true;
@@ -59,13 +59,13 @@ namespace Project_12_1
 
         private void btnClear_Click(object sender, EventArgs e) //clear button
         {
-            txtResult.Text = "0";
+            txtResult.Text = "0"; //set text value to 0
             resultValue = 0;
         }
 
         private void btnEquals_Click(object sender, EventArgs e) //equals button
         {
-            switch(operationPerformed)
+            switch(operationPerformed) 
             {
                 case "+":
                     txtResult.Text = (resultValue + Double.Parse(txtResult.Text)).ToString();
@@ -118,14 +118,13 @@ namespace Project_12_1
             }
         }
 
-        private void Negate (object sender, EventArgs e) //negate button
+        private void Negate (object sender, EventArgs e) //negate button calls to negate (+/-) on click
         {
-            if (txtResult.Text.StartsWith("-"))
+            if (txtResult.Text.Contains("-"))
             {
-                txtResult.Text = txtResult.Text.ToString();
+                txtResult.Text = txtResult.Text.Remove(0, 1);
             }
-            else if
-                (!string.IsNullOrEmpty(txtResult.Text) && decimal.Parse(txtResult.Text) != 0)
+            else
             {
                 txtResult.Text = "-" + txtResult.Text;
             }
